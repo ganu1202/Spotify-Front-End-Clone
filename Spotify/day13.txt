@@ -1,0 +1,23 @@
+Spotify clone-
+	->It 's not neccessary that clone should be same as original website, becz devlopers have spent a lot of time on developing it.
+	-> If it is similar to original website that's much.
+
+	
+	-> this tut can be used for building other projects so focus.
+	-> Remember to link it with JS after learning JS.
+
+
+
+
+	-> Yes, that's correct! In a flex container, setting the flex property to 1 for a flex item means that it will take up all available space along the main axis, after accounting for the sizes of other items.
+
+	Assuming you have a flex container with three items (sidebar, main content, and music player), setting the flex property of the main content to 1 will make it take up all the available space along the main axis, and the sidebar and music player will take up space based on their content or specified sizes.
+
+
+
+	overflow- The overflow CSS shorthand property sets the desired behavior when content does not fit in the parent element box (overflows) in the horizontal and/or vertical direction.
+visible- Overflow content is not clipped and may be visible outside the element's padding box.The element box is not a scroll container. This is the default value of the overflow property.
+hidden- Overflow content is clipped at the element's padding box. There are no scroll bars, and the clipped content is not visible (i.e., clipped content is hidden), but the content still exists. 
+clip- Overflow content is clipped at the element's overflow clip edge.
+scroll- Overflow content is clipped at the element's padding box, and overflow content can be scrolled into view using scroll bars.  
+auto- Overflow content is clipped at the element's padding box, and overflow content can be scrolled into view.

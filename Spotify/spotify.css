@@ -1,0 +1,589 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin:0;
+    background-color: #000;
+    color:#fff;
+    overflow:hidden;
+}
+
+/* 4) margin-0 to get rid of extra spaces */
+/* 5) bg to black,text color to white*/
+/* 6) overflow- The overflow CSS shorthand property sets the desired behavior when content does not fit in the parent element box (overflows) in the horizontal and/or vertical direction.
+visible- Overflow content is not clipped and may be visible outside the element's padding box.The element box is not a scroll container. This is the default value of the overflow property.
+hidden- Overflow content is clipped at the element's padding box. There are no scroll bars, and the clipped content is not visible (i.e., clipped content is hidden), but the content still exists. 
+clip- Overflow content is clipped at the element's overflow clip edge.
+scroll- Overflow content is clipped at the element's padding box, and overflow content can be scrolled into view using scroll bars.  
+auto- Overflow content is clipped at the element's padding box, and overflow content can be scrolled into view.
+
+-> In spotify website the scrolling is present only in the main content, it is not present other parts such as sidebar,music player.So for whole website we will set overflow as hidden.
+and in main content we will overflow change to a value to get scrolling.
+
+*/
+/* 7) applying styling individual partitions */
+/* 8) main is set to display -flex ,with the help of it we can apply styling to other divs */
+/* 9) just to understand let'us give all divs of main with different bg-colors , you will se all divs on same line becz we gave  flex to main*/
+/* 10)we want main to get full height of viweport  so will set it to 100vh=100% of vh,see change all divs of main also got 100%height becz main got 100% height*/
+/*now let'us give sizing to indiviual  paritions,red will sidebar,blue will main-cotent,yellow will be music player */
+/* 11) by inspecting we can see that sidebar panel tool nearly 390px so we will give it width of 340 */
+/* 12)for main if flex is set to 1 it means whatever width sidebar and music player needs give it  doesn't matter ,but remaining space available should be given to main */
+/* 13) we want yellow box (music player)which is in vertical position to come at bottom in horizontal positon , and music player is fixed at bottom even though when we scroll the main-content so we should give it position as fixed and bottom as 0px to come at bottom*/
+/*  14) we want music player's width to be 100% so set width to 100%*/
+/* 15) anaylsing the height by inspecting the height of music player it is nearly to 72px so set it to 72px */
+/* 16) when we zoom on spotify website we can observe that the boxs/paritions color is not black it is like light grey color , bg-color of main is black*/
+/*  17) so bg is black , on that we have grey boxes and on that e have light-hrey boxes, all of boxes are curved at corners*/
+/* 18) setting border-radius of sidebar to 1rem i.e 16px, 2rem=32px and rem is related to root element font-size, as s.s dec curves also dec */
+/* u can see curved edges, write same in main-content , not needed for music player as its straight */
+/* 19) we want scroll bar  in main-content not in other paritions so set overflow of main to auto, auto means scrollbar will be seen when needed not always.
+if u want to examine it add some content using lorem then see scrollbar is present only in main-content part not in other paritions.remember to remove the random text at the end */
+/* 20) setting colors that we saw on spotify, sidebar and main-content to grey and music player to black, so change red of sidebar to grey(#121212), blue of m-c to (grey(#121212) ,yellow of m-c to black. 
+#121212 is observed by seeing the color on color picker.or u can take SS and paste it in color picker u can get color code */
+.main{
+    display: flex;
+    height: 100vh;
+    padding:0.5rem;
+}
+
+.sidebar{
+    background-color:black;
+    width: 340px;
+    border-radius: 1rem;
+    margin-right: 0.5rem;
+
+}
+
+.main-content{
+    background-color: #121212;
+    flex:1;
+    border-radius: 1rem;
+    overflow: auto;
+    padding: 0 1.5rem 0 1.5rem;
+}
+
+.music-player{
+    background-color: black;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 72px;
+
+}
+/* 24)styling for achor tag of nav */
+a{
+    text-decoration: none;
+    color:white;
+
+}
+
+.nav{
+    background-color: #121212;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+    padding: 0.5rem 0.75rem;
+}
+
+/* 25) u can notcie that sidebar is in black color,but boxes on it are in grey so set sidebar color to black again as it was and nav to #121212 
+to the same nav give b-r as of sidebar */
+/*  26) set nav to display:flex , now all divs will come on sam line but we want them to vertical direction so set to column */
+/* 27) we want content to come at center vertically so we will set j-c:center,as main-axis along column so it is correct  */
+/* 28) set height to nav it is nearly 100px .by inspecting */
+/*  29) set margin and padding are p-t,p-b is 8px= and l-p,r-p is 12px=0.75rem by inspecting ,p and m in rems so that if ss dec also it will change accoridng to font-size, it will give responsivness*/
+/* 30)stlying nav-options class which has home and search,by inspecting home ,search height is 40px ,so set line-height to 40px=2.5rem, */
+/* 31) font-size for home and its icon is 16px=1rem,and 24px=1.25rem,similar applies to  search and its icon,see tha changes*/
+/* 32)  when u hover over search opt on spotify website u notice that color becomes bright, so add this effect by intially setting opacity of nav-opt to 0.7*/
+/* 33) but when we hover nav-opt/home,search its opacity becomes 1 */
+/* 34)observe that opacity of home on spotify web is same its not changing,so set opacity of home by inline-styling in hmtl code, so now home will sbe same when u hover but search will become bright */
+/* 35) to give spacing of text from icon then  set margin-left to 1rem=16px in navoption a  */
+/* 36) to give a bit more padding to nav-opt set padding in nav opt to 0.5rem 0.75rem */
+/* 37) moving onto library section */
+.nav-option{
+    line-height: 2.5rem;
+    opacity: 0.7;
+    padding:0.5rem 0.75rem;
+}
+
+.nav-option i{
+    font-size: 1.25rem;
+}
+
+.nav-option a{
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
+.nav-option:hover{
+    opacity: 1;
+}
+
+
+/* 44) styling of lib-opt */
+/* 45) on spoti web lib section is in #121212 color so set library to #121212*/
+/* 46) b-r of lib to 1rem */
+/* 47) display:flex to  class ,as we want all of them on same line*/
+/* 48) let's dec image  or icon size , to same size as of nav icons, there were set as 1.25rem */
+/* 49)  we want lib-opt to at left and icons at right, so will use j-c:space-btw,vertically at center so should use align-items:center*/
+/*  50) observe that library part got whole remaning height so set it to 100%*/
+/* 51)observe that there space btw nav and lib so set margin-top to 0.5rem */
+/* 52)give the same padding that u gave to nav */
+/* 53) styling indi icons */
+/* 54) we  applied same styling that we give to nav simply by coping nav-option class  in html code, .nav-option,.nav-option a,.nav-option:hover,will get applied{*/
+/* 55) add sizing of icons , by inspecting on spot web we saw that it is 16px=1rem , so give font-size as 1.25rem*/
+/*  56) these + and arrow icons are not bright, hovering effect makes them bright, so opacity of icons to 0.7 not to icons class*/
+/* 57) also add margin-right  to 1rem these icons not icons class*/
+/* 58) we can observe tht there is some space in sidebar panel at upper part between the main body and navigation div,so set padding to 0.5rem in main div,which will give breating space.  */
+/* 59)  go on creating boxes in library  */
+.library{
+    background-color: #121212;
+    border-radius: 1rem;
+    height: 100%;
+    margin-top: 0.5rem;
+    padding:0.5rem 0.75rem ;
+}
+
+.options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.lib-option img{
+    height:1.25rem;
+    width: 1.25rem;
+}
+
+.icons{
+    font-size:1.25rem;
+    display: flex;
+}
+
+.icons i{
+    opacity: 0.7;
+    margin-right:1rem;
+}
+
+.icons i:hover{
+    opacity: 1;
+}
+
+/* 65) styling for 1st  box, observe it's height is nearly 140px so set as 8rem*/
+/* 66) bg color of box is light-grey so set it */
+/* 67_as u saw sizing on web set its font-size of p1 and p2 to 1re, and 0.85rem ,set opacity of p2 to 0.9*/
+/* 68)set border-radius of box  to 0.75rem*/
+/* 69) set m-t m-b to 8px=0.5rem and padding t and b to 16px andp-r amd p-l to 20px */
+/* 70)see font-weight of p1 is little dark so set it's font-weight to 500  */
+/* 71) styling for button or badge class */
+/* 72) set bg for btn and  btns get default border so set it to none */
+/* 73)  give b-r to button*/
+/* 74) padding for btn is t and b is  4=0.25rem and l and r is 16px=1rem and font-weight of text in btn to 700 */
+/* 75) give some breathing space , give margin-top to badge */
+/* see hieght of badge is aroud 24px on website so set height to 2rem*/
+/* 76) then apply property width:fit-content */
+/* 77)to add the spacing in btw paragraphs instead of creating them as div change them to p element in html code */
+/* 78) dec padding  of box to 0.5 and 1rem, as u observe it on wbesite it looks less */
+/* 79) copy and make another box in html code and u saw some spacing in btw the boxes give it tht ssapcing through margin change in box to  0.5 0 1.75 0*/
+.box{
+    background-color: #232323;
+    height:8rem;
+    border-radius: 0.75rem;
+    margin:0.75rem 0 1.75rem 0;
+    padding:0.5rem 1rem;
+}
+
+.box-p1{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.box-p2{
+    font-size:0.85rem;
+    opacity: 0.9;
+}
+
+.badge{
+    background-color: white;
+    border:none;
+    border-radius: 100px;
+    padding: 0.25rem 1rem;
+    font-weight: 700;
+    margin-top:0.5rem;
+    height:2rem;
+    width:fit-content;
+}
+
+@media screen and (max-width:768px){
+    .boxes{width: 284px;}
+
+}
+
+
+
+/* some part video is not there you need to write  styling for it */
+.dark-badge{
+    background-color: #000;
+    color:#fff;
+}
+.sticky-nav{
+    position: sticky;
+    top:0;
+    background-color: #121212;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0 1rem 0;
+    z-index:10;
+
+}
+.sticky-nav-icons{
+    margin-left: 0.75rem;
+}
+
+.sticky-nav-options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.nav-item{
+    margin-right:1rem;
+}
+
+@media (max-width:1000px){
+    .hide{
+        display: none;
+    }
+}
+
+/* see the there gap btw sidebar and main-content ,so give margin-right to sidebar */
+/* 80) cards in main-content , mostly main-content consists of h2 and card, multiple times,so create h2 in html code  */
+/* 81) if we apply styling for card we cana copy it for others */
+/* 82)  display flex to card-container class which is useful when there are multiple cards , here it is single class*/
+
+/* 83)by  inspecting wkt widht and height are 150px,    set it o card class   */
+/* 84) if we want card-img to to take full width specfied as of the card class then set it to 100% ,see the changes in webpage u created*/
+/* 85) br to card =0.5rem,along with img is overlapping the card bg so give same b-r to img  */
+/*86) there is bit of space in web of spot at the left side so set it class main-content class,add some padding towards left and right */
+/* 87) give some paddig to card also */
+/* 88)font-size of title is more so set it to in card-title, opacity of text in card-info and its font-size set to 0.5 ,0.85rem */
+/* 89) using this styling and card we can multiple cards */
+.card{
+    background-color: #232323;
+    width:150px;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-img{
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+
+
+.card-title{
+    font-weight: 600;
+     
+}
+
+.card-info{
+    font-size: 0.85rem;
+    opacity: 0.5;
+}
+
+/* 93)give margin-left :1.5rem to card class for multiple cards to create spacing */
+/*94) In above case only 3 cards were there in card-container ,but if card-container consists of 5 cards then card doesn't take the specfied width it is trying to fit in the 5 cards by reducing the width, so if 
+we want cards to maintain the size and flow on new line if more cards are there apply flex-wrap property to card-container ,it is like creating repsonsive layout*/
+/* 95)apply margin-top  to these cards which came on newline incase of multiple cards,margin-top:1rem */
+/* 96) still we cannot see the last card-container class card's bottom part ,so temporarily add some br br br tags outside last card-container class within main-content div  ,we will fix it permanently after some time*/
+/* you can chage info and title of each card  */
+/* 97)see tht on website there line at bottom (not music player)  in main-content after all card-containers , if u inspect it u can see it's shown as footer so rmove all linebreak that u added and create div class called footer */
+/* 99) styling for footer with height to 300px and line div border, height, width in main-content, see the changes there is div called line with top-border to white color */
+/* 100)set opacity for line to 0.4 see changes it looks like thin light color line,line div is like attached to cards we want it at the little bottom part so set d:f for footer and align-items to center , justify-content  also to center see if came down and center v and h ,
+    if we want line div bit more at upper part then just increase line div height from 30% to 50% 
+    as height increases, border-top : white that u observe will also move towards upper part becz height of line div  got increased */
+/* 101) see that in ur webpage when u scroll main-content text info in cards  is appearing on navbar created at top of main-content or text is clasing with navabar 
+    but it is not the case on spot web , so if want navbar to show on top even though when we scroll then we need to set z-index property  to 10 in .sticky-nav class , tht thing solved  */
+/*102)  next move on music player in html code  */ 
+
+
+.footer{
+   height:300px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+}
+
+.line{
+    width: 90%;
+    height:50%;
+    border-top: 1px solid white;
+    opacity: 0.4;
+}
+
+/* 111)music-payer to d:f , spacing to 3 divs album,player,controls with 25%,50%,25% ,see changes */
+/* 112)set heights of icons of player-control , on web it is nearly 16px ,in player-control-icon*/
+/* 113)current time is not changing becz we need js for that,if u want see giving different bg to 3divs comment out after */
+/* 114) set j-c:space-between so that space will be at center all divs move towards end , and align-items to center in music-player*/
+/* 115) add same styling of music-player to .player-control class ,just change j-c: center*/
+/* 116) give spacing each icon in player-control by adding some margin-right ir margin-left to 1.75rem */
+/*  117) see on web the center icon has full opacity where as other icons less opacity when hovering opacity got higher, and center icon  is little large in height compared with other icons , center icon size increases when u hover over it */
+/* 118)so set player-icon opacity to 0.7 , */
+/* 119) when we hover over icons opacity becomes full so set it to 1, center icon height can increased by inline-styling to that p'cular icon set tis opacity to 1 froms start and its height to 2rem */
+/* for img height to should be used nto font-size */
+/* 120) next progrss-bar styling  */
+
+
+
+.music-player{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.album{
+    width: 28%;
+    /* background-color: yellow; */
+}
+
+.player{
+    width: 40%;
+    /* background-color: red; */
+}
+
+.controls{
+    width: 28%;
+    /* background-color: green; */
+}
+
+
+
+.player-control-icon{
+    height: 1rem;
+    margin-right: 1.75rem;
+    opacity: 0.7;
+}
+
+.player-controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.player-control-icon:hover{
+    opacity: 1;
+}
+/*121) set d:f for playback-bar class to bring all items of it to center ,j-c and align-items to center */
+/*122) on my webpage progress bar small in width when compared with progress-bar on website there its width is heigher so set width to progress-bar*/
+/* 123) a new property called apperance -it is used to display UI elements with platforn-specific styling ,based on the operating system's theme.  
+if border is there by default border will have a border becz of apperance, similarly a radio button will have default styling ,so if we want the pre-set styling shouldn't be there or to get rid of it, then we can set appearnce to none   */
+/* 124) set apperance of progress-bar or range i/p ele to none , get rid of default apperance of range  */
+/* 125) now pre-set styling of range by chrome will get removed ,see changes*/
+/* 126) now set the styling that we want to range i/p ele , as progress-bar color is white so set progress-bar bg to transparent, it won't be visible now */
+/* 126) set it's cursor to pointer, whenever try to hover it u will get hand symbol type cursor */
+/* 127) by defualt cursor will be set to deafult (arrow) so we changed it to pointer */
+/* 128) the progess bar on website much diff from my progress-bar on webpage so refer a document ,https://quirksmode.org/blog/archives/2015/11/styling_and_scr.html*/
+/* 129) in doc info is given that slider will have a track on which user drags a thumb, which can be styled but not scripted */
+/* 130) thumb and track can be styled by using pseudo elements::after      
+         Thumb and track are styleable, though the required pseudo-elements are browser-dependent(not compatible on all browsers):
+
+        The thumb is addressed as -webkit-slider-thumb, -moz-range-thumb, or -ms-thumb.
+        The track is addressed as -webkit-slider-runnable-track, -moz-range-track, or -ms-track.       */
+/* 131) using these pseudo elements  we will style the progress bar*/
+/* 132)  apply the pseudo ele -webkit-slider-runnable-track  to progress-bar class */
+/* 133) the track bg is like white so set it to #ddd and add b-r to it, itis little thick so dec it height ,set it to .2rem */
+/* 134) track is ok thumb is not centered so style it, by adding pseudo ele -webkit-slider-thumb to p-b again once*/
+/* 135) set apper:none of thumb in 2nd thumb pseudo ele, give hei and wid to thumb and bg color  on spot web is like green so set it to #1bd760 */
+/* 136) thumb appears in sq shape to make it rounded  give b-r to 50%*/
+/*137) to shift  towrds upper side give it margin-top:-6px ,-ve margin will push it towrds up or top  */
+/* 138)  */
+.playback-bar{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.progress-bar{
+    width: 70%;
+    appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.progress-bar::-webkit-slider-runnable-track{
+    background-color:#ddd;
+    border-radius: 100px;
+    height: 0.2rem;
+}
+
+.progress-bar::-webkit-slider-thumb{
+    appearance: none;
+    height: 1rem;
+    width: 1rem;
+    background-color: #1bd760;
+    border-radius: 50%;
+    margin-top: -6px;
+}
+
+
+
+.album{
+    display: flex;
+    align-items: center;
+    padding-left:0.5rem;
+    /* justify-content: space-between; */
+    
+}
+ .album-img{
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius:.25rem;
+    padding-right: 0.5rem;
+}
+
+.album-info{
+    display: flex;
+    width: 40%;
+    height: 2.2rem;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    /* padding: 0  ; */
+    margin:.5rem 0.5rem;
+}
+
+.album-img img{
+    width: 100%;
+    border-radius: .25rem;
+}
+
+.album-name{
+    font-size:13px;
+    font-weight: 700;
+}
+
+.album-name:hover{
+    text-decoration: underline  solid white;
+}
+.album-singer a{
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+.album-singer a:hover{
+    cursor: pointer;
+    text-decoration: underline  solid white;
+    opacity: 1;
+}
+
+.album-icon i{
+    padding-top:.5rem;
+    opacity: 0.6;
+    width: 1.8rem;
+    transition: opacity .1s ;
+}
+
+.album-icon i:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+
+.control-icons{
+    display: flex;
+    height:2rem;
+    align-items: center;
+    justify-content: end;
+    padding: 1rem;
+}
+
+.control-icons button{
+    border: none;
+    padding: 0.5rem;
+
+}
+
+
+.volume{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+}
+
+.volume-bar{
+    appearance: none;
+    width: 80%;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.volume-bar::-webkit-slider-runnable-track{
+    background-color: #ddd;
+    border-radius: 100px;
+    height:0.2rem;
+}
+
+.volume-bar::-webkit-slider-thumb{
+    appearance: none;
+    height: 1rem;
+    width: 1rem;
+    background-color: #1bd760;
+    border-radius: 50%;
+    margin: -6px;
+}
+
+.icon{
+    font-size:1.2rem;
+    opacity: 0.5;
+
+}
+
+.icon:hover{
+    opacity: 1;
+}
+
+/* .control-icons button span{
+    font-size:1.2rem;
+    opacity: 0.7;
+} */
+/* .control-icons button span:hover{
+    opacity: 1;
+} */
+
+
+
+/* .control-icons button img{
+    height: 1.2rem;
+    opacity: 0.7;
+} */
+/* 
+.control-icons button img:hover{
+    opacity: 1;
+} */
+
+/* .control-icons button i{
+    font-size: .9rem;
+    opacity: 0.7;
+
+} */
+
+
+.control-icons button i:hover{
+    opacity: 1;
+}
